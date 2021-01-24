@@ -4,6 +4,38 @@
 $ docker-compose exec app bash
 ```
 
+## ユニットテストについて
+
+1 コンテナに入る
+
+```zsh
+$ docker-compose exec app bash
+```
+
+```zsh
+cd laravel-vue-app
+```
+
+2 テスト作成
+
+```zsh
+php artisan make:test <hogeTest>
+```
+
+3 テスト検証
+
+```zsh
+./vendor/bin/phpunit
+```
+
+## ルートの確認
+
+app コンテナ入って、cd してからの
+
+```zsh
+php artisan route:list
+```
+
 ## データベースの操作
 
 `dbコンテナに入る`
