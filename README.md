@@ -28,6 +28,22 @@ php artisan make:test <hogeTest>
 ./vendor/bin/phpunit
 ```
 
+## マイグレーション
+
+ユニットテストの 2 までやる
+
+1 マイグレーションファイル作成
+
+```zsh
+php artisan make:migration <HogesHogesTable>
+```
+
+2 　データベース反映
+
+```zsh
+php artisan migrate
+```
+
 ## ルートの確認
 
 app コンテナ入って、cd してからの
@@ -47,6 +63,8 @@ $ docker-compose exec db bash
 ```zsh
 `root@74539701c71c:/#`  mysql -h 127.0.0.1 -P 3306 -u root -p
 ```
+
+`password`は`root`です
 
 ## Laravel サーバー
 
