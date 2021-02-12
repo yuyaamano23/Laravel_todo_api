@@ -27,7 +27,11 @@ class TodoController extends Controller
     public function store(Request $request)
     {
         // リクエストパラメータから取得した値をもとにTodoを作成する
-        return Todo::create($request->all());
+        $todo = new Todo;
+        $todo->title = $request->title;
+        $todo->content = $request->content;
+        $todo->save();
+        return Todo::all();
     }
 
     /**
