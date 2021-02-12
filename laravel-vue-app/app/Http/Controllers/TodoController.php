@@ -39,7 +39,7 @@ class TodoController extends Controller
     public function show(Todo $todo)
     {
         // オブジェクトを返す
-        return $todo
+        return $todo;
     }
 
     /**
