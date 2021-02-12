@@ -56,7 +56,9 @@ class TodoController extends Controller
     public function update(Request $request, Todo $todo)
     {
         // リクエストパラメータから取得した値をもとにtodoを更新する
-        $todo->update($request->all());
+        $todo->title = $request->title;
+        $todo->content = $request->content;
+        $todo->save();
         return $todo;
     }
 
