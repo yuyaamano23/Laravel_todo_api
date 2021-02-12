@@ -24,3 +24,5 @@ Route::get('/hello', function () {
         'message' => $message
     ]);
 });
+
+Route::apiResource('todos', 'TodoController');
