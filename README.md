@@ -1,3 +1,9 @@
+## コンテナ起動
+
+```zsh
+$ docker-compose up -d
+```
+
 ## コンテナに入る
 
 ```zsh
