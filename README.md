@@ -34,9 +34,20 @@ php artisan make:test <hogeTest>
 ./vendor/bin/phpunit
 ```
 
+## model の作成
+
+コンテナ入る
+
+```zsh
+php artisan make:model <Todo> -m
+```
+
+これで app/Todo.php と/detabase/migrations/date_create_todos_table.php が作成される<br>
+※-m オプションをつけるとマイグレーションファイルも同時に作成してくれる
+
 ## マイグレーション
 
-ユニットテストの 2 までやる
+コンテナ入る
 
 1 マイグレーションファイル作成
 
@@ -49,6 +60,19 @@ php artisan make:migration <HogesHogesTable>
 ```zsh
 php artisan migrate
 ```
+
+## コントローラの作成
+
+コンテナ入る
+
+```zsh
+php artisan make:controller <TodoController>
+```
+
+**オプションについて**<br>
+`--resource` は RESTful なアクションを生成できるオプションです。これを使うことによって必要なアクションをスムーズに作成できます。<br>
+`--model=Todo` 　コントローラーが使用するモデルを指定することができます。<br>
+`--api create` や edit メソッドを含まない API リソースコントローラを素早く生成する<br>
 
 ## ルートの確認
 
@@ -93,3 +117,14 @@ $ localhost:8080
 2. 乱切りにする。
 3. 調味料**B**と合わせて炒める。 - `火傷`に注意。
 </details>
+
+<br>
+## todoAPI ルート
+
+| method | URI         | action  |
+| ------ | ----------- | ------- |
+| GET    | /todos      | index   |
+| GET    | /todos/{id} | show    |
+| POST   | todos       | store   |
+| PUT    | /todos/{id} | update  |
+| DELETE | /todos/{id} | destroy |
