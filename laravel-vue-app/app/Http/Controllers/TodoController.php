@@ -14,8 +14,8 @@ class TodoController extends Controller
      */
     public function index()
     {
-        // todoを作成日時の新しい順で返す
-        return Todo::latest();
+        // todoを返す
+        return Todo::all();
     }
 
     /**
