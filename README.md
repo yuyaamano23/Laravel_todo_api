@@ -118,7 +118,6 @@ $ localhost:8080
 3. 調味料**B**と合わせて炒める。 - `火傷`に注意。
 </details>
 
-<br>
 ## todoAPI ルート
 
 | method | URI         | action  |
