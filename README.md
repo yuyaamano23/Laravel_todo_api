@@ -118,6 +118,10 @@ $ localhost:8080
 3. 調味料**B**と合わせて炒める。 - `火傷`に注意。
 </details>
 
+## cors 解決方法
+
+[React から Laravel の API サーバーを叩く + CORS 概説](https://qiita.com/10mi8o/items/2221134f9001d8d107d6)
+
 ## todoAPI ルート
 
 | method | URI         | action  |
