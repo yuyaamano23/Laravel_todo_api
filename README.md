@@ -120,7 +120,9 @@ $ localhost:8080
 
 ## cors 解決方法
 
-[React から Laravel の API サーバーを叩く + CORS 概説](https://qiita.com/10mi8o/items/2221134f9001d8d107d6)
+[React から Laravel の API サーバーを叩く + CORS 概説](https://qiita.com/10mi8o/items/2221134f9001d8d107d6)<br>
+[delete,put はこれで直った](https://github.com/yuyaamano23/Laravel_Docker_practice/commit/ca68ffe44bfb93e878115af972debc6d49c2d51f)<br>
+[参考記事（Laravel で Access-Control-Allow-Origin ヘッダーを付与しても CORS エラーが解消しない）](https://qiita.com/madayo/items/8a31fdd4def65fc08393)<br>
 
 ## todoAPI ルート
 
