@@ -25,4 +25,10 @@ Route::get('/hello', function () {
     ]);
 });
 
-Route::apiResource('todos', 'TodoController');
+Route::group(['middleware' => ['api', 'cors']], function(){
+    Route::options('todos', function() {
+        return response()->json();
+    });
+    Route::apiResource('todos', 'TodoController');
+});
+
