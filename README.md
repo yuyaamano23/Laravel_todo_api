@@ -10,17 +10,13 @@ $ docker-compose up -d
 $ docker-compose exec app bash
 ```
 
-## ユニットテストについて
-
-1 コンテナに入る
-
-```zsh
-$ docker-compose exec app bash
-```
-
 ```zsh
 cd laravel-vue-app
 ```
+
+## ユニットテストについて
+
+1 コンテナに入る
 
 2 テスト作成
 
@@ -125,6 +121,10 @@ $ localhost:8080
 [参考記事（Laravel で Access-Control-Allow-Origin ヘッダーを付与しても CORS エラーが解消しない）](https://qiita.com/madayo/items/8a31fdd4def65fc08393)<br>
 
 ## todoAPI ルート
+
+**注意**<br>
+**エンドポイントは被らないように命名する**
+**例)　すでに`'/todos/'`があるのに`'/todos/search'`を追加してはいけない**
 
 | method | URI         | action  |
 | ------ | ----------- | ------- |
