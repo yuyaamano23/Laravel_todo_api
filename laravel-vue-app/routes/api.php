@@ -30,5 +30,10 @@ Route::group(['middleware' => ['api', 'cors']], function(){
         return response()->json();
     });
     Route::apiResource('todos', 'TodoController');
-});
+    // ↓このように書いても良い
+    // Route::get('todos', 'TodoController@index');
 
+
+    // 検索機能APIのルーティング
+    Route::get('todo/search', 'TodoSearchController@index')->name('todos.search');
+});
