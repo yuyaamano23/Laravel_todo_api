@@ -59,7 +59,7 @@ php artisan make:migration create_hogehoges_table --create=hoge
 php artisan migrate
 ```
 
-[migraion コマンド](https://qiita.com/mikakane/items/6ed937b4904be0f0a5cf)
+[migraion コマンド一覧](https://qiita.com/mikakane/items/6ed937b4904be0f0a5cf)
 
 ## コントローラの作成
 
