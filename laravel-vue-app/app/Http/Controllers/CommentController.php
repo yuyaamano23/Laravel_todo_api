@@ -36,22 +36,29 @@ class CommentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\comment  $comment
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show(comment $comment)
+    public function show(Request $request)
     {
-        //
+        //user_idが一致するコメントを取得する
+        $todo_id = $request->todo_id;
+
+        // クエリビルダでクエリを組み立てる
+        $query = Comment::query();
+        $query->where('todo_id', $todo_id);
+        return $query->get();
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\comment  $comment
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, comment $comment)
+    public function update(Request $request, Comment $comment)
     {
         //
     }
@@ -59,7 +66,7 @@ class CommentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\comment  $comment
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
     public function destroy(comment $comment)
