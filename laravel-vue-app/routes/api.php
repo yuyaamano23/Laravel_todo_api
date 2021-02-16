@@ -37,5 +37,6 @@ Route::group(['middleware' => ['api', 'cors']], function(){
     // 検索機能APIのルーティング
     Route::get('todo/search', 'TodoSearchController@index')->name('todos.search');
     // コメント機能のルーティング
-    Route::post('todo/comment', 'CommentController@store')->name('todos.comment');
+    Route::post('todo/comment/post', 'CommentController@store')->name('todos.commentPut');
+    Route::get('todo/comment/get', 'CommentController@show')->name('todos.commentGet');
 });
