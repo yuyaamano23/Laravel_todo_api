@@ -15,7 +15,7 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('comment', 200);
+            $table->string('body', 200);
             // bigIncrements()で指定されている主キーは自動で UNSIGNED が追加されています。
             //   そのため、外部キーでも指定が必要です。
             $table->bigInteger('todo_id')->unsigned();
