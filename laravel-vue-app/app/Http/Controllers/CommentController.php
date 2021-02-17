@@ -71,6 +71,7 @@ class CommentController extends Controller
      */
     public function destroy(comment $comment)
     {
-        //
+        //　コメント削除
+        $comment->delete();
     }
 }
