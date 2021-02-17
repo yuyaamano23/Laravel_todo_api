@@ -59,7 +59,10 @@ class CommentController extends Controller
      */
     public function update(Request $request, Comment $comment)
     {
-        //
+        // リクエストパラメータから取得した値をもとにcommnetを更新する
+        $comment->body = $request->body;
+        $comment->save();
+        return $comment;
     }
 
     /**
