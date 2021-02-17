@@ -9,12 +9,18 @@ class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        //user_idが一致するコメントを取得する
+        $todo_id = $request->todo_id;
+
+        // クエリビルダでクエリを組み立てる
+        $query = Comment::query();
+        $query->where('todo_id', $todo_id);
+        return $query->get();
     }
 
     /**
@@ -42,13 +48,6 @@ class CommentController extends Controller
      */
     public function show(Request $request)
     {
-        //user_idが一致するコメントを取得する
-        $todo_id = $request->todo_id;
-
-        // クエリビルダでクエリを組み立てる
-        $query = Comment::query();
-        $query->where('todo_id', $todo_id);
-        return $query->get();
     }
 
     /**
