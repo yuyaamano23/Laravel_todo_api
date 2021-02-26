@@ -76,6 +76,6 @@ class RegisterController extends Controller
         $user->password = Hash::make($request->password);
         $user->api_token = Str::random(60);
         $user->save();
-        return $request;;
+        return $user;
     }
 }
