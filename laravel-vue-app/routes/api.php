@@ -29,22 +29,17 @@ Route::group(['middleware' => ['api', 'cors']], function(){
     Route::post('user/register', 'Auth\RegisterController@store');
     // 認証が必要なapi↓
     Route::group(["middleware" => "auth:api"], function () {
-
+    // todo関連
+    Route::apiResource('todos', 'TodoController');
+    // 検索機能API
+    Route::get('todo/search', 'TodoSearchController@index')->name('todos.search');
+    // コメント関連
+    Route::apiResource('comments', 'commentController');
     });
     Route::options('todos', function() {
         return response()->json();
     });
-    Route::apiResource('todos', 'TodoController');
     // ↓このようにひとつづつ丁寧に書いても良い
-    // Route::get('todos', 'TodoController@index');
-    // なんならこれもあり
-    Route::apiResource('comments', 'commentController');
-
-
-
-    // 検索機能APIのルーティング
-    Route::get('todo/search', 'TodoSearchController@index')->name('todos.search');
-    // コメント機能のルーティング apiReourceで書いてみました
     // Route::post('todo/comment/post', 'CommentController@store')->name('todos.comment.store');
     // Route::get('todo/comment/get', 'CommentController@show')->name('todos.comment.show');
     // Route::delete('todo/comment/delete', 'CommentController@destroy')->name('todos.comment.destroy');
