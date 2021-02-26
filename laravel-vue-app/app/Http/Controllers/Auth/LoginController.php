@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class LoginController extends Controller
 {
@@ -54,10 +56,13 @@ class LoginController extends Controller
         // パスワードが一致するかどうかを確認
         if (Auth::attempt($credentials)) {
             // 認証に成功した
-            return response()->json([
-                'login success'
-            ]);
-        }else{
+
+            // Userテーブルから１レコードのみ取得する
+            $user = User::where('email', $request->email)->first();
+            // tokenを更新
+            $user->update(['api_token' => Str::random(60)]);
+            return $user->api_token;
+        } else {
             return response()->json(['error'=>'Unauthorised'], 401);
         };
     }
