@@ -2,6 +2,7 @@
 
 - githubaction phpUnit 自動化
 - テストデータ
+- swagger でドキュメント書く
 
 ## コンテナ起動
 
@@ -152,12 +153,21 @@ $ localhost:8080
 
 [cors を解決した俺のコミット](https://github.com/yuyaamano23/Laravel_todo_api/commit/baad5837cf934f85f34f39e36bc0cdea53e71c64)<br>
 
+## 認証
+
+[laravel 公式ドキュメント(認証)](https://readouble.com/laravel/6.x/ja/authentication.html)<br>
+[本気で詳細を理解したい人向けの Laravel ログイン認証](https://reffect.co.jp/laravel/laravel-authentification-by-code-base#i)<br>
+[Laravel(6.x)でのセキュアそうな API 認証を実装する](https://qiita.com/ProjectEuropa/items/425acd8fb027830a4063#%E3%81%9A%E3%81%A3%E3%81%A8%E5%90%8C%E3%81%98api_token%E3%82%82%E5%AB%8C%E3%81%AA%E3%81%AE%E3%81%A7%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3%E6%AF%8E%E3%81%AB%E6%9B%B4%E6%96%B0%E3%81%99%E3%82%8B)<br>
+[Laravel 6.0 API 認証(Passport パッケージ）を使う方法](https://qiita.com/you1978/items/96cf8e3eb83fc9964fff)<br>
+[Laravel 6 の API 認証で auth:api で括った処理が動かなかった件](https://ohwhsmm7.blog.fc2.com/blog-entry-573.html)<br>
+[https://eza-s.com/blog/archives/327/](https://eza-s.com/blog/archives/327/)<br>
+
 ## todoAPI ルート
 
 **【注意】**<br>
 **エンドポイントは被らないように命名する**<br>
 **例)　すでに`'/todos/'`があるのに`'/todos/search'`を追加してはいけない**
-**apiResource 使うと楽に作れることもある**
+**apiResource 使うと楽に作れる**
 
 | method | URI         | action  |
 | ------ | ----------- | ------- |
