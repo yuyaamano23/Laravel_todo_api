@@ -30,6 +30,7 @@ Route::group(['middleware' => ['api', 'cors']], function(){
     Route::post('login', 'Auth\LoginController@login');
     // 認証が必要なapi
     Route::group(["middleware" => "auth:api"], function () {
+    Route::get('me', 'UserController@me');
     // todo関連
     Route::apiResource('todos', 'TodoController');
     // 検索機能API
