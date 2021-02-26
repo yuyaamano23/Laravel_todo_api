@@ -26,8 +26,9 @@ Route::get('/hello', function () {
 });
 
 Route::group(['middleware' => ['api', 'cors']], function(){
-    Route::post('user/register', 'Auth\RegisterController@store');
-    // 認証が必要なapi↓
+    Route::post('register', 'Auth\RegisterController@store');
+    Route::post('login', 'Auth\LoginController@login');
+    // 認証が必要なapi
     Route::group(["middleware" => "auth:api"], function () {
     // todo関連
     Route::apiResource('todos', 'TodoController');
