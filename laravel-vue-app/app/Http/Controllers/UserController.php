@@ -96,6 +96,6 @@ class UserController extends Controller
 
         $query = User::query();
         $query->where('email', $email);
-        return $query->get();
+        return $query->get()->first();
     }
 }
