@@ -169,6 +169,8 @@ $ localhost:8080
 ## phpコードフォーマッター
 [コード 整形 PHP CS Fixer インストール](https://syslog.life/2020/07/15/%E3%82%B3%E3%83%BC%E3%83%89-%E6%95%B4%E5%BD%A2-php-cs-fixer-%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/)<br>
 
+
+# ドキュメント
 ## todoAPI ルート
 
 **【注意】**<br>
@@ -183,3 +185,8 @@ $ localhost:8080
 | POST   | todos       | store   |
 | PUT    | /todos/{id} | update  |
 | DELETE | /todos/{id} | destroy |
+
+<br>
+
+## DB設計
+![todo_ER](https://user-images.githubusercontent.com/58542696/109641286-e1e21b00-7b94-11eb-9e5f-85105d8117bd.png)
