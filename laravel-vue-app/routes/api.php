@@ -25,21 +25,21 @@ Route::get('/hello', function () {
     ]);
 });
 
-Route::group(['middleware' => ['api', 'cors']], function(){
+Route::group(['middleware' => ['api', 'cors']], function () {
     Route::post('register', 'Auth\RegisterController@store');
     Route::post('login', 'Auth\LoginController@login');
     // 認証が必要なapi
-    Route::group(["middleware" => "auth:api"], function () {
-    // ユーザ情報取得
-    Route::get('me', 'UserController@me');
+    Route::group(['middleware' => 'auth:api'], function () {
+        // ユーザ情報取得
+        Route::get('me', 'UserController@me');
+    });
     // todo関連
     Route::apiResource('todos', 'TodoController');
     // 検索機能API
     Route::get('todo/search', 'TodoSearchController@index')->name('todos.search');
     // コメント関連
     Route::apiResource('comments', 'commentController');
-    });
-    Route::options('todos', function() {
+    Route::options('todos', function () {
         return response()->json();
     });
     // ↓このようにひとつづつ丁寧に書いても良い

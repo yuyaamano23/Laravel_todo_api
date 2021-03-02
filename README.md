@@ -162,6 +162,13 @@ $ localhost:8080
 [Laravel 6 の API 認証で auth:api で括った処理が動かなかった件](https://ohwhsmm7.blog.fc2.com/blog-entry-573.html)<br>
 [https://eza-s.com/blog/archives/327/](https://eza-s.com/blog/archives/327/)<br>
 
+## GitHubActions
+
+[GitHub Actions 導入メモ](https://coders-shelf.com/github-actions-intro/)<br>
+
+## phpコードフォーマッター
+[コード 整形 PHP CS Fixer インストール](https://syslog.life/2020/07/15/%E3%82%B3%E3%83%BC%E3%83%89-%E6%95%B4%E5%BD%A2-php-cs-fixer-%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/)<br>
+
 ## todoAPI ルート
 
 **【注意】**<br>

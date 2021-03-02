@@ -61,7 +61,7 @@ class LoginController extends Controller
             $user = User::where('email', $request->email)->first();
             // tokenを更新
             $user->update(['api_token' => Str::random(60)]);
-            return $user->api_token;
+            return $user;
         } else {
             return response()->json(['error'=>'Unauthorised'], 401);
         };
