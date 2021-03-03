@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Todo extends Model
 {
-    public function comments()
+    public function todo()
     {
         // 1つのTodoは多くのcommentを持っている
         return $this->hasMany('App\Comment');
