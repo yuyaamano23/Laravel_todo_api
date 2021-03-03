@@ -178,15 +178,25 @@ $ localhost:8080
 **例)　すでに`'/todos/'`があるのに`'/todos/search'`を追加してはいけない**
 **apiResource 使うと楽に作れる**
 
-| method | URI         | action  |
-| ------ | ----------- | ------- |
-| GET    | /todos      | index   |
-| GET    | /todos/{id} | show    |
-| POST   | todos       | store   |
-| PUT    | /todos/{id} | update  |
-| DELETE | /todos/{id} | destroy |
+swagger_editerを使って書くつもり
+
+| method |     URI     |           parameter          | Description |
+| ------ | ----------- | -------------------------- | ----------- |
+| GET    | /todos      |                            | todoの一覧を取得する
+| GET    | /todos/{id} |                            | リクエスト{id}のtodoを取得する |
+| POST   | /todos       |       title,content        | todoを投稿する               |
+| PUT    | /todos/{id} |       title,content        | リクエスト{id}のtodoを修正する |
+| DELETE | /todos/{id} |                            | リクエスト{id}のtodoを削除する |
+| GET    | /todo/search |          keyword          | todoをリクエスト{keyword}で曖昧検索して取得する |
+| GET    | /comments    |       todo_id             | todo_idのコメントを取得する    |
+| POST    | /comments   |       body,todo_id        | todoo_idへのコメントを投稿する |
+| DELETE  | /comments/{id}   |                      | リクエスト{id}のcommentを削除する |
+| POST  | /register     | name,email,password       | 新規登録 |
+| POST  | /login        | email,password            | ログイン |
+| GET  | /me            | email,(token)                     | ログインしているユーザの情報 |
+
 
 <br>
 
 ## DB設計
-![todo_ER](https://user-images.githubusercontent.com/58542696/109641286-e1e21b00-7b94-11eb-9e5f-85105d8117bd.png)
+![todo_ER](https://user-images.githubusercontent.com/58542696/109645622-7438ed80-7b9a-11eb-93a4-97279883c688.png)
