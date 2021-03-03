@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+// デフォルトで存在するUserモデルはModelを基底クラスにすでに持つAuthenticatableを継承しているため、改めてmodelを継承させる必要はない
 class User extends Authenticatable
 {
     use Notifiable;
