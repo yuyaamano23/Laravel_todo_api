@@ -6,7 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-// デフォルトで存在するUserモデルはModelを基底クラスにすでに持つAuthenticatableを継承しているため、改めてmodelを継承させる必要はない
+// デフォルトで存在するUserモデルはModelを基底クラスにすでに持つAuthenticatableを継承している
 class User extends Authenticatable
 {
     use Notifiable;
@@ -37,4 +37,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function comment()
+    {
+        // 1つのUserは多くのcommentを持っている
+        return $this->hasMany('App\Comment');
+    }
 }
